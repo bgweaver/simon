@@ -1,38 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Button Click Example</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <meta charset="utf-8">
+  <title>Simon</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
+
 <body>
-    <button id="red">Red</button>
-    <button id="blue">Blue</button>
-    <button id="green">Green</button>
-    <button id="yellow">Yellow</button>
+  <h1 id="level-title">Press A Key to Start</h1>
+  <div class="container">
+    <div lass="row">
 
-    <script>
-        let gamePattern = [];
-        let userClickedPattern = [];
+      <div type="button" id="green" class="btn green">
 
-        let buttonColours = ["red", "blue", "green", "yellow"];
+      </div>
 
-        function nextSequence() {
-            let randomNumber = Math.floor(Math.random() * 4);
-            return randomNumber;
-        }
+      <div type="button" id="red" class="btn red">
 
-        let randomChosenColour = buttonColours[nextSequence()];
+      </div>
+    </div>
 
-        gamePattern.push(randomChosenColour);
+    <div class="row">
 
-        $(`#${randomChosenColour}`).fadeIn(100).fadeOut(100).fadeIn(100);
+      <div type="button" id="yellow" class="btn yellow">
 
-        $(document).ready(function() {
-            $("button").on("click", function() {
-                console.log(this);  // Logs the button element to the console
-            });
-        });
-    </script>
+      </div>
+      <div type="button" id="blue" class="btn blue">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="game.js" charset="UTF-8"></script>
 </body>
+
 </html>
