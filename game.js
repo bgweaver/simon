@@ -15,6 +15,16 @@ $(".btn").click(function() {
         checkAnswer(userClickedPattern.length-1);};
 });
 
+$(".btn").on("touchstart", function() {
+    if (gameStart === true) {
+        let userChosenColour = this.id;
+        animatePress(this.id);
+        playSound(this.id);
+        userClickedPattern.push(userChosenColour);
+        checkAnswer(userClickedPattern.length - 1);
+    }
+});
+
 function nextSequence() {
     level++;
     $("h1").text("Level " + level);
