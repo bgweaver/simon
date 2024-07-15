@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Button Click Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="green">Green</button>
+    <button id="yellow">Yellow</button>
+
+    <script>
+        let gamePattern = [];
+        let userClickedPattern = [];
+
+        let buttonColours = ["red", "blue", "green", "yellow"];
+
+        function nextSequence() {
+            let randomNumber = Math.floor(Math.random() * 4);
+            return randomNumber;
+        }
+
+        let randomChosenColour = buttonColours[nextSequence()];
+
+        gamePattern.push(randomChosenColour);
+
+        $(`#${randomChosenColour}`).fadeIn(100).fadeOut(100).fadeIn(100);
+
+        $(document).ready(function() {
+            $("button").on("click", function() {
+                console.log(this);  // Logs the button element to the console
+            });
+        });
+    </script>
+</body>
+</html>
